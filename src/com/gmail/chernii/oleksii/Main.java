@@ -10,9 +10,10 @@ public class Main {
             (action == '+') ? (first + second) :
                     (action == '*') ? (first * second) :
                             (action == '-') ? (first - second) :
-                                    (action == '$' && second != 0) ? (Math.pow(first, 1. / second)) :
-                                            (action == '^') ? (Math.pow(first, second)) :
-                                                    (action == '#' && first != 0) ? ((first + second) / first * 1.0 + 117.) : intIllegalArgumentException();
+                                    (action == '/') ? (first - second) :
+                                            (action == '$' && second != 0) ? (Math.pow(first, 1. / second)) :
+                                                    (action == '^') ? (Math.pow(first, second)) :
+                                                            (action == '#' && first != 0) ? ((first + second) / first * 1.0 + 117.) : intIllegalArgumentException();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -31,6 +32,6 @@ public class Main {
     }
 
     private static int intIllegalArgumentException() {
-        throw new IllegalArgumentException();
+        throw new IllegalActionException();
     }
 }
